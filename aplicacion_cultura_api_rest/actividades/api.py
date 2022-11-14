@@ -1,9 +1,14 @@
-from .models import Actividades
+from .models import Actividades, Comentarios
 from rest_framework import viewsets, permissions
-from .serializers import ProjectSerializer
+from .serializers import ActividadesSerializer, ComentariosSerializer
 
 
-class ProjectViewSet(viewsets.ModelViewSet):
+class ProjectViewSetActividades(viewsets.ModelViewSet):
     queryset = Actividades.objects.all()
     permissions_classes = [permissions.AllowAny]
-    serializer_class = ProjectSerializer
+    serializer_class = ActividadesSerializer
+
+class ProjectViewSetComentarios(viewsets.ModelViewSet):
+    queryset = Comentarios.objects.all()
+    permissions_classes = [permissions.AllowAny]
+    serializer_class = ComentariosSerializer

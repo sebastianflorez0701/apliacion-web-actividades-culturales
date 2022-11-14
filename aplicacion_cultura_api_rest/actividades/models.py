@@ -16,8 +16,8 @@ class Valoraciones(models.Model):
 
 class Comentarios(models.Model):
     comentario = models.TextField(null=True , blank=True)
-    id_usuario = models.ForeignKey('Usuarios',on_delete=models.CASCADE)
-    id_actividad = models.ForeignKey('Actividades',on_delete=models.CASCADE)
+    usuario_comentario= models.TextField(null=True , blank=True)
+    id_comentario = models.TextField(null=True , blank=True)
 
 class ActividadesUsuarios(models.Model):
     id_actividad = models.ForeignKey('Actividades',on_delete=models.CASCADE)
