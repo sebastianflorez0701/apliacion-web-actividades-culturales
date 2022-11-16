@@ -2,9 +2,10 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class Actividades(models.Model):
-    contenido = models.TextField()
-    precio = models.IntegerField()
-    id_categoria = models.ForeignKey('Categorias',on_delete=models.CASCADE)
+    nombre_actividad = models.TextField()
+    descripcion_actividad = models.TextField(null=True , blank=True)
+    imagen_actividad = models.TextField(null=True , blank=True)
+    precio_actividad = models.IntegerField()
 
 class Categorias(models.Model):
     nombre = models.CharField(max_length=100,unique=True)
@@ -15,8 +16,8 @@ class Valoraciones(models.Model):
 
 class Comentarios(models.Model):
     comentario = models.TextField(null=True , blank=True)
-    id_usuario = models.ForeignKey('Usuarios',on_delete=models.CASCADE)
-    id_actividad = models.ForeignKey('Actividades',on_delete=models.CASCADE)
+    usuario_comentario= models.TextField(null=True , blank=True)
+    id_comentario = models.TextField(null=True , blank=True)
 
 class ActividadesUsuarios(models.Model):
     id_actividad = models.ForeignKey('Actividades',on_delete=models.CASCADE)
