@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'actividades.apps.AtividadesConfig',
+    'actividades.apps.ActividadesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'aplicacion_cultura_api_rest.wsgi.application'
 DATABASES = {
      "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "app_actividades",
+        "NAME": "app_actividades_2",
         "USER": "sebas",
         "PASSWORD": "123",
         "HOST": '',
